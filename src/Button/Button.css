@@ -1,0 +1,66 @@
+.button {
+  display: inline-flex;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  height: 40px;
+  align-items: center;
+  color: #fff;
+  background: #263238;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.button:hover:not(:disabled) {
+  background: #455A64;
+}
+.button:focus {
+  outline: none;
+}
+.button:focus:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+  border: 1px dashed #fff;
+  border-radius: 2px;
+}
+.button:active:not(:disabled) {
+  top: 1px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.button__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.button__text {
+  font: 400 16px/20px 'Ubuntu', sans-serif;
+  margin: 0 10px;
+}
+.button__icon {
+  width: 20px;
+  height: 20px;
+  background: no-repeat center;
+}
+.button__icon:only-child {
+  margin: 0;
+}
+.button__icon_expand {
+  background-image: url(../assets/images/expand-20.svg);
+}
+.button__icon_collapse {
+  background-image: url(../assets/images/collapse-20.svg);
+}
+.button:disabled {
+  opacity: .5;
+  cursor: default;
+}

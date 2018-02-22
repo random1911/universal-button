@@ -1,0 +1,128 @@
+@fonts: 'Ubuntu', sans-serif;;
+@baseSize: 16px;
+
+@profileBackground: #784BA0;
+@darkGray: #263238;
+@mediumGray: #455A64;
+@lightGray: #78909C;
+@captionColor: #464646;
+
+@desktopContentMaxWidth: 960px;
+@desktopMaxWidth: 1600px;
+@desktopTopbarHeight: 50px;
+
+@middleMinHeight: 400px;
+
+@bgColor: #f5f5f5;
+
+@gmailColor:#dd4b39;
+@telegramColor: #32afed;
+@vkColor:#507299;
+@fbColor:#4267b2;
+
+.blue-violet-grad(){
+  background-color: #784BA0;
+  background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+}
+
+.fillContainer(@val:0){
+  position: absolute;
+  top:@val;
+  right:@val;
+  bottom:@val;
+  left:@val;
+}
+.wh(@val) {
+  width:@val;
+  height:@val;
+}
+
+.ib(@align:top) {
+  display: inline-block;
+  vertical-align: @align;
+}
+.no-selection(){
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hidetext(){
+  white-space: nowrap;
+  text-indent: -2000%;
+  overflow: hidden;
+}
+.text-overflow() {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.flexBox(@direction, @align:stretch) {
+  //самые базовые стили для флекс-контейнера
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: @direction;
+  flex-direction: @direction;
+  -ms-flex-align: @align;
+  align-items: @align;
+}
+.no-shrink(){
+  //что бы элементыне скукоживались от использования флексов
+  -ms-flex-negative:0;
+  flex-shrink: 0;
+}
+.flex(@val:1){
+  -ms-flex: @val;
+  flex: @val;
+}
+.order(@val){
+  -ms-flex-order: @val;
+  order: @val;
+}
+.transparent-bg-ie() {
+  background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') repeat;
+}
+
+.resetButtonStyles(@background: transparent) {
+  background: @background;
+  border:none;
+}
+
+.focusTopBarStyle(){
+  position: absolute;
+  .fillContainer(4px);
+  border-radius: 3px;
+  border: 1px dotted #fff;
+}
+
+.lang-flag(){
+  width:25px;
+  height:18px;
+  background: no-repeat center;
+  flex: none;
+}
+.lang-flag_ru(){
+  background-image: url(../../assets/images/flag-rf.svg);
+}
+.lang-flag_en(){
+  background-image: url(../../assets/images/flag-gb.svg);
+}
+
+.desktopContentWrapper() {
+  width: @desktopContentMaxWidth;
+  margin:0 auto;
+}
+
+.buttonStyle() {
+  cursor: pointer;
+  border:none;
+  padding:10px;
+  height:40px;
+  align-items: center;
+  color: #fff;
+  background: @darkGray;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.6);
+  transition: background-color .2s ease, box-shadow .2s ease;
+  .no-selection;
+}

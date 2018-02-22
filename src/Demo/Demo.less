@@ -1,0 +1,32 @@
+@import "../assets/styles/variables";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: @bgColor;
+  padding: 0;
+  margin: 0;
+}
+
+.demo {
+
+}
+
+.demo-header {
+  padding: 20px;
+  color: #fff;
+  .blue-violet-grad();
+  text-shadow: 1px 1px rgba(0, 0,0,.5);
+  box-shadow: 0 3px 4px rgba(0,0,0,.3);
+}
+
+.demo-caption {
+  margin: 0;
+  font: 400 40px/1 @fonts;
+}
+
+.demo-content {
+  padding: 20px;
+}
