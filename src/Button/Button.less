@@ -34,6 +34,7 @@
   &__icon {
     .wh(20px);
     background: no-repeat center;
+    position: relative;
     &:only-child {
       margin:0;
     }
@@ -42,6 +43,29 @@
     }
     &_collapse {
       background-image: url(../assets/images/collapse-20.svg);
+    }
+    &_warning {
+      overflow: hidden;
+      &:before {
+        content:"";
+        position: absolute;
+        left: 50%;
+        margin-left: -10px;
+        top: -8px;
+        .wh(0);
+        border: 10px solid transparent;
+        border-bottom: 20px solid #fff;
+      }
+      &:after {
+        text-align: center;
+        width: 20px;
+        position: absolute;
+        font: 500 16px/16px @fonts;
+        content: "!";
+        color: @darkGray;
+        left: 0;
+        top: 4px;
+      }
     }
   }
   &:disabled {

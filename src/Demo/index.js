@@ -31,6 +31,9 @@ class Demo extends React.Component {
           <p>
             <Button  url="#hi" type="link" preIcon="collapse" text="Hello" postIcon="expand" />
           </p>
+          <p>
+            <Button preIcon="warning" text="Нет атрибута action" />
+          </p>
         </div>
       </div>
     );

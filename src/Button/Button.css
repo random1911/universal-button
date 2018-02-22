@@ -50,6 +50,7 @@
   width: 20px;
   height: 20px;
   background: no-repeat center;
+  position: relative;
 }
 .button__icon:only-child {
   margin: 0;
@@ -59,6 +60,30 @@
 }
 .button__icon_collapse {
   background-image: url(../assets/images/collapse-20.svg);
+}
+.button__icon_warning {
+  overflow: hidden;
+}
+.button__icon_warning:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  top: -8px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom: 20px solid #fff;
+}
+.button__icon_warning:after {
+  text-align: center;
+  width: 20px;
+  position: absolute;
+  font: 500 16px/16px 'Ubuntu', sans-serif;
+  content: "!";
+  color: #263238;
+  left: 0;
+  top: 4px;
 }
 .button:disabled {
   opacity: .5;
