@@ -34,6 +34,15 @@ class Demo extends React.Component {
           <p>
             <Button preIcon="warning" text="Нет атрибута action" />
           </p>
+          <p>
+            <Button text="Модификаторы ['green', 'small']" modifier={['green', 'small']} />
+          </p>
+          <p>
+            <Button text="Модификатор 'green'" modifier="green" />
+          </p>
+          <p>
+            <Button text="Модификаторы 'green, large'" modifier="green, large" />
+          </p>
         </div>
       </div>
     );

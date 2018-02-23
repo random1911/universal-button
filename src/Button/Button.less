@@ -5,6 +5,13 @@
   position: relative;
   text-decoration: none;
   .buttonStyle();
+  &:after {
+    // костыль для active в IE
+    content:"";
+    position: absolute;
+    .fillContainer(0);
+    .transparent-bg-ie;
+  }
   &:hover:not(:disabled) {
     background: @mediumGray;
   }
@@ -22,13 +29,28 @@
     top:1px;
     box-shadow: 0 1px 2px rgba(0,0,0,.3);;
   }
+  &_green {
+    background: @green800;
+    &:hover:not(:disabled){
+      background: @green600;
+    }
+  }
+  &_small {
+    padding:5px;
+    font-size: 14px;
+  }
+  &_large {
+    padding:15px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
   &__inner {
     position: relative;
     display: flex;
     align-items: center;
   }
   &__text {
-    font: 400 16px/20px @fonts;
     margin: 0 10px;
   }
   &__icon {

@@ -24,6 +24,9 @@ import './Button.css'
 * Имя css класса, который получит кнопка, как БЭМ блок, и с которого будут начинаться классы её элементов
 * По умолчанию button
 *
+* modifier: string || array
+* Модификаторы для корневого БЭМ блока кнопки
+*
 * text: string
 * Текст на кнопке
 *
@@ -53,6 +56,26 @@ const Button = props => {
 
   // определяем имя CSS класса, или используем значение по умолчанию
   const baseClass = props.baseClass || 'button';
+
+  // вернет строку с модификаторами
+  function getModifiers(modifier) {
+    if(modifier){
+      let modifiers;
+      if(typeof modifier === 'string'){
+        modifiers = modifier.split(',')
+      }else if(Array.isArray(modifier)){
+        modifiers = [...modifier]
+      }
+      let result = [];
+      for(let i=0; i < modifiers.length; i++){
+        result.push(baseClass + '_' + modifiers[i].trim());
+      }
+      return result.join(' ');
+    }
+  }
+
+  // определяем финальный набор классов на корневом элементе
+  const combinedClass = `${baseClass} ${getModifiers(props.modifier)}`;
 
   const renderIcon = (name) => {
     const iconClass = `${baseClass}__icon`;
@@ -90,7 +113,7 @@ const Button = props => {
   switch (props.type) {
     case 'link':
       template = (
-        <a className={baseClass}
+        <a className={combinedClass}
            href={props.url}>
           {inner}
         </a>
@@ -98,7 +121,7 @@ const Button = props => {
       break;
     case 'label':
       template = (
-        <label className={baseClass}
+        <label className={combinedClass}
                htmlFor={props.inputId}>
           {inner}
         </label>
@@ -107,7 +130,7 @@ const Button = props => {
     default: {
       template = (
         <button
-          className={baseClass}
+          className={combinedClass}
           disabled={props.disabled}
           onClick={() => action(props.arguments)}
         >
@@ -128,6 +151,7 @@ Button.propTypes = {
   url: PropTypes.string,
   inputId: PropTypes.string,
   baseClass: PropTypes.string,
+  modifier: PropTypes.any,
   text: PropTypes.string,
   preIcon: PropTypes.string,
   postIcon: PropTypes.string
