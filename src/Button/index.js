@@ -30,6 +30,9 @@ import './Button.css'
 * text: string
 * Текст на кнопке
 *
+* tip: string
+* Текст для title
+*
 * preIcon: string
 * Модификатор для иконки, которая будет до текста, или единственным элементом внутри кнопки
 *
@@ -70,12 +73,14 @@ const Button = props => {
       for(let i=0; i < modifiers.length; i++){
         result.push(baseClass + '_' + modifiers[i].trim());
       }
-      return result.join(' ');
+      return ` ${result.join(' ')}`;
+    }else{
+      return '';
     }
   }
 
   // определяем финальный набор классов на корневом элементе
-  const combinedClass = `${baseClass} ${getModifiers(props.modifier)}`;
+  const combinedClass = `${baseClass}${getModifiers(props.modifier)}`;
 
   const renderIcon = (name) => {
     const iconClass = `${baseClass}__icon`;
@@ -87,16 +92,14 @@ const Button = props => {
   // создаем шаблон содержимого
   const inner = (
     <span className={`${baseClass}__inner`}>
-        {/* если есть иконка вначале, выводим её */}
+      {/* если есть иконка вначале, выводим её */}
       { props.preIcon && (
         renderIcon(props.preIcon)
       ) }
       {/* если есть текст, выводим его */}
-      {
-        props.text && (
-          <span className={`${baseClass}__text`}>{props.text}</span>
-        )
-      }
+      { props.text && (
+        <span className={`${baseClass}__text`}>{props.text}</span>
+      )}
       {/*
         иконку в конце показываем только если есть текст, если нужна кнопка из одной иконки,
         нужно использовать preIcon. Кнопка из двух иконок без текста - это было бы странно
@@ -114,6 +117,7 @@ const Button = props => {
     case 'link':
       template = (
         <a className={combinedClass}
+           title={props.tip}
            href={props.url}>
           {inner}
         </a>
@@ -122,6 +126,7 @@ const Button = props => {
     case 'label':
       template = (
         <label className={combinedClass}
+               title={props.tip}
                htmlFor={props.inputId}>
           {inner}
         </label>
@@ -131,6 +136,7 @@ const Button = props => {
       template = (
         <button
           className={combinedClass}
+          title={props.tip}
           disabled={props.disabled}
           onClick={() => action(props.arguments)}
         >
@@ -153,6 +159,7 @@ Button.propTypes = {
   baseClass: PropTypes.string,
   modifier: PropTypes.any,
   text: PropTypes.string,
+  tip: PropTypes.string,
   preIcon: PropTypes.string,
   postIcon: PropTypes.string
 };

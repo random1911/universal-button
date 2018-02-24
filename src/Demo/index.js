@@ -17,16 +17,19 @@ class Demo extends React.Component {
         </header>
         <div className="demo-content">
           <p>
-            <Button text="Press me" action={this.sampleLog} arguments="God damn" />
+            <Button tip="Просто кнопка" text="Press me" action={this.sampleLog} arguments="God damn" />
           </p>
           <p>
             <Button text="Disabled" disabled action={this.sampleLog} />
           </p>
           <p>
-            <Button preIcon="expand" />
+            <Button tip="Развернуть" preIcon="expand" />
           </p>
           <p>
-            <Button url="#hello" type="link" preIcon="collapse" postIcon="expand" />
+            <Button tip="Свернуь" preIcon="collapse" />
+          </p>
+          <p>
+            <Button tip="Collapse" url="#bye" type="link" preIcon="collapse" postIcon="expand" />
           </p>
           <p>
             <Button  url="#hi" type="link" preIcon="collapse" text="Hello" postIcon="expand" />
