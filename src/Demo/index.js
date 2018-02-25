@@ -227,6 +227,81 @@ class Demo extends React.Component {
                   Примеры кейса "очень творческий дизайнер"
                 </th>
               </tr>
+
+              <tr>
+                <td className="demo-table__td">
+                  По какой-то неведомой причине в этой кнопке текст не должен был быть выровнен по центру блока
+                </td>
+                <td className="demo-table__td ccmp-bg">
+                  <Button
+                    baseClass="products-button"
+                    text="Заменить акцию"
+                    icon="change"
+                  />
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="products-button" text="Заменить акцию" icon="change"`} />
+                </td>
+              </tr>
+
+              <tr>
+                <td className="demo-table__td">
+                  А в этой - так и быть, можно по центру
+                </td>
+                <td className="demo-table__td ccmp-bg">
+                  <Button
+                    baseClass="service-restrict-button"
+                    text="Запретить по фроду"
+                    icon="disable"
+                  />
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="service-restrict-button" text="Запретить по фроду" icon="disable"`} />
+                </td>
+              </tr>
+
+              <tr>
+                <td className="demo-table__td">
+                  А здесь текст все-таки по центру, поэтому шаблон из первой кнопки не очень подходит
+                </td>
+                <td className="demo-table__td ccmp-emphasis-bg">
+                  <Button
+                    baseClass="service-share-button"
+                    text="Отправить SMS"
+                  />
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="service-share-button" text="Отправить SMS"`} />
+                </td>
+              </tr>
+
+              <tr>
+                <td className="demo-table__td">
+                  Можно было бы использовать предыдущий вариант с модификатором, а можно было бы просто нарисовать кнопки одинаково. Да, все пять встречаются в одном разделе, и больше нигде.
+                </td>
+                <td className="demo-table__td ccmp-emphasis-bg">
+                  <Button
+                    baseClass="service-action-button"
+                    text="Применить"
+                  />
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="service-action-button" text="Применить"`} />
+                </td>
+              </tr>
+
+              <tr>
+                <td className="demo-table__td">
+                  Рисовать foсus? hover? Зачем, когда можно рисовать новые варианты кнопок?
+                </td>
+                <td className="demo-table__td ccmp-warning-bg">
+                  <Button baseClass="change-tp-cancel" text="Отказаться от смены ТП" />
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="change-tp-cancel" text="Отказаться от смены ТП"`} />
+                </td>
+              </tr>
+
             </tbody>
           </table>
 

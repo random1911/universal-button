@@ -12,6 +12,7 @@
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

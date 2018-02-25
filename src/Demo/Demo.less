@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+::-moz-focus-inner {
+  border: 0;
+  padding: 0
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -143,6 +148,7 @@ body {
   font: 400 14px/18px @fonts;
   position: relative;
   cursor: pointer;
+  white-space: nowrap;
   &:hover, &:focus  {
     background: #CFD8DC;
   }
@@ -169,5 +175,127 @@ body {
   }
   & + & {
     margin-left: 10px;
+  }
+}
+
+// ccmp
+
+.ccmp-bg {
+  background: @lightBg;
+}
+.ccmp-emphasis-bg {
+  background: @emphasisBg;
+}
+.ccmp-warning-bg {
+  background: @warningBg;
+}
+
+.products-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  height: 30px;
+  padding: 0 8px;
+  .productButtonStyle();
+  &:hover, &:focus {
+    .productButtonStyleHover;
+  }
+  &:focus {
+    outline: none;
+  }
+  &__inner {
+    position: relative;
+    display: inline-flex;
+  }
+  &__icon {
+    .wh(14px);
+    flex:0 0 auto;
+    margin:7px 6px 0 -2px;
+    background: no-repeat center;
+    &_change {
+      background-image: url(../assets/images/products-button-change.svg);
+    }
+  }
+  &__text {
+    font: 300 14px/26px @fonts;
+  }
+}
+
+.service-restrict-button {
+  height: 26px;
+  padding: 2px 9px;
+  font: 400 14px/20px @fonts;
+  background: transparent;
+  white-space: nowrap;
+  &:disabled {
+    opacity:.3;
+    cursor: default;
+  }
+  &__inner {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+
+  }
+  &__icon {
+    .wh(12px);
+    flex: 0 0 auto;
+    margin: 0 5px 0 -3px;
+    background: no-repeat center;
+    &_disable {
+      background-image: url(../assets/images/12x12-block.svg);
+    }
+  }
+  .productButtonStyle(#000);
+  &:hover:not([disabled]), &:focus {
+    .productButtonStyleHover(#000);
+    outline: none;
+  }
+}
+
+.service-action-button {
+  min-width: 96px;
+  height:25px;
+  font: 300 14px/23px @fonts;
+  padding: 0 6px;
+  .productButtonStyle();
+  &:hover, &:focus {
+    .productButtonStyleHover();
+    outline: none;
+  }
+  &__inner {
+    position: relative;
+  }
+}
+
+.service-share-button {
+  height:30px;
+  padding: 0 14px;
+  font: 300 14px/28px @fonts;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  .productButtonStyle();
+  &:hover {
+    .productButtonStyleHover()
+  }
+  &__inner {
+    position: relative;
+  }
+}
+
+.change-tp-cancel {
+  cursor: pointer;
+  background: transparent;
+  height:24px;
+  display: block;
+  white-space: nowrap;
+  color: @linkColor;
+  padding:0 9px;
+  border: 1px solid @borderColor;
+  font: 400 14px/22px @fonts;
+  &__inner {
+    position: relative;
   }
 }

@@ -1,4 +1,4 @@
-@fonts: 'Ubuntu', sans-serif;;
+@fonts: 'Ubuntu', sans-serif;
 @baseSize: 16px;
 
 @profileBackground: #784BA0;
@@ -6,12 +6,6 @@
 @mediumGray: #455A64;
 @lightGray: #78909C;
 @captionColor: #464646;
-
-@desktopContentMaxWidth: 960px;
-@desktopMaxWidth: 1600px;
-@desktopTopbarHeight: 50px;
-
-@middleMinHeight: 400px;
 
 @bgColor: #f5f5f5;
 
@@ -47,7 +41,7 @@
   display: inline-block;
   vertical-align: @align;
 }
-.no-selection(){
+.noSelection(){
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -63,28 +57,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.flexBox(@direction, @align:stretch) {
-  //самые базовые стили для флекс-контейнера
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: @direction;
-  flex-direction: @direction;
-  -ms-flex-align: @align;
-  align-items: @align;
-}
-.no-shrink(){
-  //что бы элементыне скукоживались от использования флексов
-  -ms-flex-negative:0;
-  flex-shrink: 0;
-}
-.flex(@val:1){
-  -ms-flex: @val;
-  flex: @val;
-}
-.order(@val){
-  -ms-flex-order: @val;
-  order: @val;
-}
+
 .transparent-bg-ie() {
   background: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7') repeat;
 }
@@ -114,10 +87,6 @@
   background-image: url(../../assets/images/flag-gb.svg);
 }
 
-.desktopContentWrapper() {
-  width: @desktopContentMaxWidth;
-  margin:0 auto;
-}
 
 .buttonStyle() {
   cursor: pointer;
@@ -130,7 +99,8 @@
   border-radius: 2px;
   box-shadow: 0 1px 3px rgba(0,0,0,.6);
   transition: background-color .2s ease, box-shadow .2s ease;
-  .no-selection;
+  white-space: nowrap;
+  .noSelection;
 }
 
 .buttonFocusBefore() {
@@ -147,4 +117,27 @@
   position: absolute;
   .fillContainer(0);
   .transparent-bg-ie;
+}
+
+// из CCMP
+
+@borderColor: #ccd4dc;
+@lightBg: #f7f9fd;
+@emphasisBg: #e7eaf2;
+@warningBg: #fffcdf;
+@linkColor: #4075ae;
+
+.productButtonStyle(@color: #8098b2){
+  white-space: nowrap;
+  text-align: center;
+  color: @color;
+  border: 1px solid @borderColor;
+  .noSelection;
+  cursor: pointer;
+  background: transparent;
+}
+.productButtonStyleHover(@color: #5a728c){
+  color: @color;
+  background-color: #d8e0ea;
+  border-color: #d8e0ea;
 }
