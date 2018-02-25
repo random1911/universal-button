@@ -5,19 +5,15 @@
   position: relative;
   text-decoration: none;
   .buttonStyle();
-  &:after {
-    // костыль для active в IE
-    content:"";
-    position: absolute;
-    .fillContainer(0);
-    .transparent-bg-ie;
+  &::after {
+    .buttonIeActiveFix;
   }
   &:hover:not(:disabled) {
     background: @mediumGray;
   }
   &:focus {
     outline: none;
-    &:before {
+    &::before {
       .buttonFocusBefore();
     }
   }
@@ -64,7 +60,7 @@
     }
     &_warning {
       overflow: hidden;
-      &:before {
+      &::before {
         content:"";
         position: absolute;
         left: 50%;
@@ -74,7 +70,7 @@
         border: 10px solid transparent;
         border-bottom: 20px solid #fff;
       }
-      &:after {
+      &::after {
         text-align: center;
         width: 20px;
         position: absolute;

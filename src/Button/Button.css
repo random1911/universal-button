@@ -17,7 +17,7 @@
   -ms-user-select: none;
   user-select: none;
 }
-.button:after {
+.button::after {
   content: "";
   position: absolute;
   top: 0;
@@ -32,7 +32,7 @@
 .button:focus {
   outline: none;
 }
-.button:focus:before {
+.button:focus::before {
   content: "";
   position: absolute;
   top: 3px;
@@ -87,7 +87,7 @@
 .button__icon_warning {
   overflow: hidden;
 }
-.button__icon_warning:before {
+.button__icon_warning::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -98,7 +98,7 @@
   border: 10px solid transparent;
   border-bottom: 20px solid #fff;
 }
-.button__icon_warning:after {
+.button__icon_warning::after {
   text-align: center;
   width: 20px;
   position: absolute;

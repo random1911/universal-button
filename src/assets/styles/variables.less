@@ -140,3 +140,11 @@
   border: 1px dashed #fff;
   border-radius: 2px;
 }
+
+.buttonIeActiveFix(){
+  // костыль для active в IE
+  content:"";
+  position: absolute;
+  .fillContainer(0);
+  .transparent-bg-ie;
+}

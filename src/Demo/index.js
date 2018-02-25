@@ -172,12 +172,56 @@ class Demo extends React.Component {
                 </td>
               </tr>
 
-
               <tr>
                 <th className="demo-table__th"  colSpan="3">
                   Примеры в контексте диалогового окна
                 </th>
               </tr>
+
+              <tr>
+                <td className="demo-table__td">
+                  Кнопка с крестом для закрытия диалогового окна
+                </td>
+                <td className="demo-table__td" rowSpan="3">
+
+                  <div className="dialog-simulator">
+                    <header className="dialog-simulator-header">
+                      <div className="dialog-simulator-header__caption">
+                        Вопрос
+                      </div>
+                      <Button baseClass="dialog-close" tip="Закрыть диалог" />
+                    </header>
+                    <div className="dialog-simulator-body">
+                      Применить изменения?
+                    </div>
+                    <div className="dialog-simulator-buttons">
+                      <Button baseClass="dialog-button" modifier="ok" text="Применить" />
+                      <Button baseClass="dialog-button" text="Отмена" />
+                    </div>
+                  </div>
+
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="dialog-close" tip="Закрыть диалог"`} />
+                </td>
+              </tr>
+              <tr>
+                <td className="demo-table__td">
+                  Главная кнопка в подвале диалога
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="dialog-button" modifier="ok" text="Применить"`} />
+                </td>
+              </tr>
+              <tr>
+                <td className="demo-table__td">
+                  Обычная кнока в подвале диалога
+                </td>
+                <td className="demo-table__td">
+                  <Code markup={`Button baseClass="dialog-button" text="Отмена"`} />
+                </td>
+              </tr>
+
               <tr>
                 <th className="demo-table__th"  colSpan="3">
                   Примеры кейса "очень творческий дизайнер"
@@ -186,9 +230,6 @@ class Demo extends React.Component {
             </tbody>
           </table>
 
-          <p>
-            TODO: пример с Label
-          </p>
         </div>
       </div>
     );
