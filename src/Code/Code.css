@@ -1,0 +1,21 @@
+.code {
+  border: 1px solid #455A64;
+  padding: 10px;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: top;
+  background: #fff;
+}
+.code__tag {
+  color: #1A237E;
+}
+.code__attr {
+  display: block;
+  margin-left: 2em;
+}
+.code__attr-name {
+  color: #303F9F;
+}
+.code__attr-value {
+  color: #43A047;
+}

@@ -1,6 +1,7 @@
 import React  from 'react';
 import './Demo.css';
 import Button from '../Button';
+import Code from '../Code';
 
 class Demo extends React.Component {
 
@@ -19,6 +20,7 @@ class Demo extends React.Component {
           <p>
             <Button tip="Просто кнопка" text="Press me" action={this.sampleLog} arguments="God damn" />
           </p>
+          <Code markup={`Button tip="Просто кнопка" text="Press me" action={this.sampleLog} arguments="God damn"`} />
           <p>
             <Button text="Disabled" disabled action={this.sampleLog} />
           </p>
