@@ -24,10 +24,16 @@ import './Button.css'
 * Имя css класса, который получит кнопка, как БЭМ блок, и с которого будут начинаться классы её элементов
 * По умолчанию button
 *
+* modifier: string || array
+* Модификаторы для корневого БЭМ блока кнопки
+*
 * text: string
 * Текст на кнопке
 *
-* preIcon: string
+* tip: string
+* Текст для title
+*
+* icon: string
 * Модификатор для иконки, которая будет до текста, или единственным элементом внутри кнопки
 *
 * postIcon: string
@@ -54,6 +60,28 @@ const Button = props => {
   // определяем имя CSS класса, или используем значение по умолчанию
   const baseClass = props.baseClass || 'button';
 
+  // вернет строку с модификаторами
+  function getModifiers(modifier) {
+    if(modifier){
+      let modifiers;
+      if(typeof modifier === 'string'){
+        modifiers = modifier.split(',')
+      }else if(Array.isArray(modifier)){
+        modifiers = [...modifier]
+      }
+      let result = [];
+      for(let i=0; i < modifiers.length; i++){
+        result.push(baseClass + '_' + modifiers[i].trim());
+      }
+      return ` ${result.join(' ')}`;
+    }else{
+      return '';
+    }
+  }
+
+  // определяем финальный набор классов на корневом элементе
+  const combinedClass = `${baseClass}${getModifiers(props.modifier)}`;
+
   const renderIcon = (name) => {
     const iconClass = `${baseClass}__icon`;
     return (
@@ -64,19 +92,17 @@ const Button = props => {
   // создаем шаблон содержимого
   const inner = (
     <span className={`${baseClass}__inner`}>
-        {/* если есть иконка вначале, выводим её */}
-      { props.preIcon && (
-        renderIcon(props.preIcon)
+      {/* если есть иконка вначале, выводим её */}
+      { props.icon && (
+        renderIcon(props.icon)
       ) }
       {/* если есть текст, выводим его */}
-      {
-        props.text && (
-          <span className={`${baseClass}__text`}>{props.text}</span>
-        )
-      }
+      { props.text && (
+        <span className={`${baseClass}__text`}>{props.text}</span>
+      )}
       {/*
         иконку в конце показываем только если есть текст, если нужна кнопка из одной иконки,
-        нужно использовать preIcon. Кнопка из двух иконок без текста - это было бы странно
+        нужно использовать icon. Кнопка из двух иконок без текста - это было бы странно
         */}
       {
         props.text && props.postIcon && (
@@ -90,7 +116,8 @@ const Button = props => {
   switch (props.type) {
     case 'link':
       template = (
-        <a className={baseClass}
+        <a className={combinedClass}
+           title={props.tip}
            href={props.url}>
           {inner}
         </a>
@@ -98,7 +125,8 @@ const Button = props => {
       break;
     case 'label':
       template = (
-        <label className={baseClass}
+        <label className={combinedClass}
+               title={props.tip}
                htmlFor={props.inputId}>
           {inner}
         </label>
@@ -107,7 +135,8 @@ const Button = props => {
     default: {
       template = (
         <button
-          className={baseClass}
+          className={combinedClass}
+          title={props.tip}
           disabled={props.disabled}
           onClick={() => action(props.arguments)}
         >
@@ -128,8 +157,10 @@ Button.propTypes = {
   url: PropTypes.string,
   inputId: PropTypes.string,
   baseClass: PropTypes.string,
+  modifier: PropTypes.any,
   text: PropTypes.string,
-  preIcon: PropTypes.string,
+  tip: PropTypes.string,
+  icon: PropTypes.string,
   postIcon: PropTypes.string
 };
 
