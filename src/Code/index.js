@@ -12,7 +12,8 @@ const Code = props => {
     return (
       <span key={name}
             className="code__attr">
-        <span className="code__attr-name">{name}</span><span className="code__attr-value">={value}</span>
+        <span className="code__attr-name">{name}</span>
+        { value && (<span className="code__attr-value">={value}</span>) }
       </span>
     )
   };

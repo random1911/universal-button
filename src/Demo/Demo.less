@@ -4,14 +4,22 @@
   box-sizing: border-box;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 body {
   background: @bgColor;
   padding: 0;
   margin: 0;
-}
-
-.demo {
-
+  font: 400 @baseSize/1.4 @fonts;
 }
 
 .demo-header {
@@ -29,4 +37,35 @@ body {
 
 .demo-content {
   padding: 20px;
+}
+
+.drop-area-simulator {
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px dashed @mediumGray;
+  background: #fff;
+  text-align: center;
+  & input:focus + .button:before {
+    .buttonFocusBefore();
+  }
+}
+
+.demo-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  &__first-col {
+    width: 400px;
+  }
+  &__td, &__th {
+    border: 1px solid #ccc;
+  }
+  &__td {
+    vertical-align: top;
+    padding: 20px;
+  }
+  &__th {
+    padding: 5px;
+    font: 500 20px/1.2 @fonts;
+    background: #fff;
+  }
 }

@@ -33,7 +33,7 @@ import './Button.css'
 * tip: string
 * Текст для title
 *
-* preIcon: string
+* icon: string
 * Модификатор для иконки, которая будет до текста, или единственным элементом внутри кнопки
 *
 * postIcon: string
@@ -93,8 +93,8 @@ const Button = props => {
   const inner = (
     <span className={`${baseClass}__inner`}>
       {/* если есть иконка вначале, выводим её */}
-      { props.preIcon && (
-        renderIcon(props.preIcon)
+      { props.icon && (
+        renderIcon(props.icon)
       ) }
       {/* если есть текст, выводим его */}
       { props.text && (
@@ -102,7 +102,7 @@ const Button = props => {
       )}
       {/*
         иконку в конце показываем только если есть текст, если нужна кнопка из одной иконки,
-        нужно использовать preIcon. Кнопка из двух иконок без текста - это было бы странно
+        нужно использовать icon. Кнопка из двух иконок без текста - это было бы странно
         */}
       {
         props.text && props.postIcon && (
@@ -160,7 +160,7 @@ Button.propTypes = {
   modifier: PropTypes.any,
   text: PropTypes.string,
   tip: PropTypes.string,
-  preIcon: PropTypes.string,
+  icon: PropTypes.string,
   postIcon: PropTypes.string
 };
 

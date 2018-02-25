@@ -18,11 +18,7 @@
   &:focus {
     outline: none;
     &:before {
-      content:"";
-      position: absolute;
-      .fillContainer(3px);
-      border: 1px dashed #fff;
-      border-radius: 2px;
+      .buttonFocusBefore();
     }
   }
   &:active:not(:disabled) {

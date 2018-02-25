@@ -3,10 +3,21 @@
 *:after {
   box-sizing: border-box;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 body {
   background: #f5f5f5;
   padding: 0;
   margin: 0;
+  font: 400 16px/1.4 'Ubuntu', sans-serif;
 }
 .demo-header {
   padding: 20px;
@@ -22,4 +33,41 @@ body {
 }
 .demo-content {
   padding: 20px;
+}
+.drop-area-simulator {
+  border-radius: 10px;
+  padding: 40px;
+  border: 1px dashed #455A64;
+  background: #fff;
+  text-align: center;
+}
+.drop-area-simulator input:focus + .button:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
+  left: 3px;
+  border: 1px dashed #fff;
+  border-radius: 2px;
+}
+.demo-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.demo-table__first-col {
+  width: 400px;
+}
+.demo-table__td,
+.demo-table__th {
+  border: 1px solid #ccc;
+}
+.demo-table__td {
+  vertical-align: top;
+  padding: 20px;
+}
+.demo-table__th {
+  padding: 5px;
+  font: 500 20px/1.2 'Ubuntu', sans-serif;
+  background: #fff;
 }
