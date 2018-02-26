@@ -204,7 +204,6 @@ body {
 .products-button {
   display: inline-flex;
   flex-direction: column;
-  justify-content: flex-start;
   height: 30px;
   padding: 0 8px;
   white-space: nowrap;
@@ -230,18 +229,20 @@ body {
 .products-button__inner {
   position: relative;
   display: inline-flex;
+  align-items: center;
 }
 .products-button__icon {
   width: 14px;
   height: 14px;
-  flex: 0 0 auto;
-  margin: 7px 6px 0 -2px;
+  flex: none;
+  margin: 0 6px 0 -2px;
   background: no-repeat center;
 }
 .products-button__icon_change {
   background-image: url(../assets/images/products-button-change.svg);
 }
 .products-button__text {
+  padding: 2px 0 0;
   font: 300 14px/26px 'Ubuntu', sans-serif;
 }
 .service-restrict-button {

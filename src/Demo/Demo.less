@@ -195,7 +195,6 @@ body {
 .products-button {
   display: inline-flex;
   flex-direction: column;
-  justify-content: flex-start;
   text-align: center;
   height: 30px;
   padding: 0 8px;
@@ -209,17 +208,19 @@ body {
   &__inner {
     position: relative;
     display: inline-flex;
+    align-items: center;
   }
   &__icon {
     .wh(14px);
-    flex:0 0 auto;
-    margin:7px 6px 0 -2px;
+    flex: none;
+    margin: 0 6px 0 -2px;
     background: no-repeat center;
     &_change {
       background-image: url(../assets/images/products-button-change.svg);
     }
   }
   &__text {
+    padding: 2px 0 0;
     font: 300 14px/26px @fonts;
   }
 }
