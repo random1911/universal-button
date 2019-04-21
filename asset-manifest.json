@@ -1,10 +1,15 @@
 {
-  "main.css": "static/css/main.e0d0a9b5.css",
-  "main.css.map": "static/css/main.e0d0a9b5.css.map",
-  "main.js": "static/js/main.5f9fb6a6.js",
-  "main.js.map": "static/js/main.5f9fb6a6.js.map",
-  "static\\media\\12x12-block.svg": "static/media/12x12-block.f71483d2.svg",
-  "static\\media\\collapse-20.svg": "static/media/collapse-20.457995c8.svg",
-  "static\\media\\expand-20.svg": "static/media/expand-20.c4ae59c7.svg",
-  "static\\media\\products-button-change.svg": "static/media/products-button-change.a4291909.svg"
+  "main.css": "/universal-button/static/css/main.72b4996c.chunk.css",
+  "main.js": "/universal-button/static/js/main.0a5d2481.chunk.js",
+  "main.js.map": "/universal-button/static/js/main.0a5d2481.chunk.js.map",
+  "runtime~main.js": "/universal-button/static/js/runtime~main.012becf8.js",
+  "runtime~main.js.map": "/universal-button/static/js/runtime~main.012becf8.js.map",
+  "static/js/2.85156c68.chunk.js": "/universal-button/static/js/2.85156c68.chunk.js",
+  "static/js/2.85156c68.chunk.js.map": "/universal-button/static/js/2.85156c68.chunk.js.map",
+  "index.html": "/universal-button/index.html",
+  "precache-manifest.06e903d05d5726f27bd6aac06e5750ea.js": "/universal-button/precache-manifest.06e903d05d5726f27bd6aac06e5750ea.js",
+  "service-worker.js": "/universal-button/service-worker.js",
+  "static/css/main.72b4996c.chunk.css.map": "/universal-button/static/css/main.72b4996c.chunk.css.map",
+  "static/media/Demo.css": "/universal-button/static/media/products-button-change.a4291909.svg",
+  "static/media/Button.css": "/universal-button/static/media/expand-20.462e83ed.svg"
 }
