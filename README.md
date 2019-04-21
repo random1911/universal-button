@@ -1,16 +1,13 @@
+# What is this?
 
-# Что это?
+This is my thoughts on the button component when using the CCS in a classic global scope. After years working with AngularJS and extremely creative designers, this example shows the power of React to make flexible components for multiple cases.
 
-Это - реализация кода UI компонента "кнопка", которая могла бы иметь универсальное использование, на основе моего опыта использования различных кнопок.
+So button can play different roles.
 
-Кнопка может играть несколько ролей.
+First, button can be just button - `<button>` for handle some `onClick` actions
 
-Во-первых, она может быть просто кнопкой (button), на которую будет повешен onClick
+Second, it can be a link with button styles, so it has to be anchor `<a>` or router`<Link>`
 
-Во-вторых, она может быть ссылкой*, и тогда на ней нужен url для перехода.
+And third, it can be a label associated with file input, for example.
 
-(*Если проекте используется react router, вместо тега a должен быть Link)
-
-В-третьих, если нужно повесить эту кнопку куда-нибудь вроде области для дропа файлов, кнопка может быть лейблом (label), с ассоциируемым с ним ID инпута, тоесть htmlFor.
-
-[Демо с различными примерами](https://random1911.github.io/universal-button/)
+[Demo with examples](https://random1911.github.io/universal-button/)

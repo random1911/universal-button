@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "./Code.css";
 
-const Code = props => {
+const Code = ({markup}) => {
   const template = /\s(?=([^"]*"[^"]*")*[^"]*$)/g, divider = '***';
-  const markup = props.markup.replace(template, divider);
-  const [tag, ...attrs] = markup.split(divider);
+  const dividedMarkup = markup.replace(template, divider);
+  const [tag, ...attrs] = dividedMarkup.split(divider);
 
   const renderAttrLine = attr => {
     const [name, value] = attr.split('=');
